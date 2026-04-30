@@ -1,0 +1,25 @@
+# GitHub Actions Workflow (Duplicated for standard compliance)
+# Note: Actual GitHub Actions must be in .github/workflows/ to run.
+
+name: Automated Preprocessing (Backup)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: |
+          pip install pandas numpy scikit-learn
+          cd preprocessing
+          python automate_Rislan.py
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated: Update preprocessed dataset"
+          file_pattern: 'preprocessing/*.csv'
