@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Rislan/OneDrive/Dokumen/Dicoding/Eksperimen_SML_M-Rislan-T/mlruns/357076194321604622/models/m-62381d9b1bf54dd7b117b1852d6c1608/artifacts
+creation_timestamp: 1777648744380
+experiment_id: '357076194321604622'
+last_updated_timestamp: 1777648753542
+model_id: m-62381d9b1bf54dd7b117b1852d6c1608
+model_type: null
+name: model
+source_run_id: a34ad7ce7ff34ba4aa4656ca065a7e2b
+status: 2
+status_message: null

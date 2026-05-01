@@ -1,0 +1,18 @@
+digest: 223a4784
+name: dataset
+profile: '{"num_rows": 960, "num_elements": 14400}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "age", "required": true},
+  {"type": "double", "name": "gender", "required": true}, {"type": "double", "name":
+  "daily_social_media_hours", "required": true}, {"type": "double", "name": "sleep_hours",
+  "required": true}, {"type": "double", "name": "screen_time_before_sleep", "required":
+  true}, {"type": "double", "name": "academic_performance", "required": true}, {"type":
+  "double", "name": "physical_activity", "required": true}, {"type": "double", "name":
+  "social_interaction_level", "required": true}, {"type": "double", "name": "stress_level",
+  "required": true}, {"type": "double", "name": "anxiety_level", "required": true},
+  {"type": "double", "name": "addiction_level", "required": true}, {"type": "double",
+  "name": "Screen_Sleep_Ratio", "required": true}, {"type": "double", "name": "platform_usage_Instagram",
+  "required": true}, {"type": "double", "name": "platform_usage_TikTok", "required":
+  true}, {"type": "double", "name": "Age_Group_Late Teen", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Rislan", "mlflow.source.name": "Membangun_model/modelling.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "a51b4496b7c9ae99286026a697e124423a1bdf25"}}'
+source_type: code
