@@ -27,14 +27,14 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y
 )
 
-# Set tracking URI ke folder lokal agar tidak error dengan SQLite di beberapa sistem
-mlflow.set_tracking_uri("file:./mlruns")
-mlflow.set_experiment("Basic_Model_Experiment")
+# MLflow akan otomatis mengatur tracking saat dijalankan via 'mlflow run'
+# mlflow.set_tracking_uri("file:./mlruns")
+# mlflow.set_experiment("Basic_Model_Experiment")
 
 # Menggunakan autolog sesuai kriteria Basic
 mlflow.sklearn.autolog()
 
-with mlflow.start_run():
+with mlflow.start_run() as run:
     model = RandomForestClassifier(
         n_estimators=100,
         random_state=42
@@ -56,4 +56,4 @@ with mlflow.start_run():
 
     # Simpan run_id untuk keperluan CI/CD (Docker Build)
     with open("run_id.txt", "w") as f:
-        f.write(mlflow.active_run().info.run_id)
+        f.write(run.info.run_id)
