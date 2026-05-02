@@ -1,0 +1,36 @@
+name: Automated Preprocessing
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install pandas numpy scikit-learn
+
+      - name: Run Preprocessing Script
+        run: |
+          cd preprocessing
+          python automate_M-Rislan-Tristansyah.py
+
+      - name: Commit Processed Data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated: Update preprocessed dataset"
+          file_pattern: 'preprocessing/*.csv'
+
