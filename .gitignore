@@ -1,0 +1,15 @@
+# MLflow
+mlruns/
+mlflow.db
+saved_model/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Monitoring
+prometheus_data/
+grafana_data/
+
+# Repositories (Separated)
+Workflow-CI/

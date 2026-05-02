@@ -1,5 +1,0 @@
-Link Repository Docker Hub:
-https://hub.docker.com/r/rislantrs/mental-health-model
-
-Command Push:
-docker push rislantrs/mental-health-model:latest
