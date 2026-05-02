@@ -1,5 +1,8 @@
-Tautan GitHub Actions Workflow (CI):
-https://github.com/Rislantrs/Eksperimen_SML_M-Rislan-Tristansyah/actions
+Tautan GitHub Repository (Workflow-CI):
+https://github.com/Rislantrs/Workflow-CI
+
+Tautan GitHub Actions Workflow:
+https://github.com/Rislantrs/Workflow-CI/actions
 
 Tautan Docker Hub:
 https://hub.docker.com/r/rislantrs/mental-health-model

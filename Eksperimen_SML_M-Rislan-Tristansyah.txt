@@ -1,5 +1,5 @@
+Tautan GitHub Repository (Eksperimen):
+https://github.com/Rislantrs/Eksperimen_SML_M-Rislan-Tristansyah
+
 Tautan Google Colab:
 https://colab.research.google.com/drive/1Asc8h6pL0F8NzSnVqEuq3O0LLejsR97w?usp=sharing
-
-Tautan GitHub Repository:
-https://github.com/Rislantrs/Eksperimen_SML_M-Rislan-Tristansyah

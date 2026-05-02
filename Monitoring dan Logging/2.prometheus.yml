@@ -3,6 +3,14 @@ global:
   evaluation_interval: 5s
 
 scrape_configs:
-  - job_name: 'mlflow_model'
+  # Job untuk mengumpulkan metrik dari prometheus_exporter.py model inferensi
+  # Metrik utama yang dipantau:
+  #   1. model_requests_total           - Total request ke model
+  #   2. model_inference_latency_seconds - Latensi inferensi (Histogram)
+  #   3. system_cpu_usage_percent        - Penggunaan CPU sistem
+  - job_name: 'mental_health_model'
     static_configs:
       - targets: ['host.docker.internal:8000']
+        labels:
+          app: 'mental-health-model'
+          env: 'monitoring'

@@ -3,7 +3,7 @@ name: MLflow CI Workflow
 on:
   push:
     paths:
-      - 'Workflow-CI/MLProject/**'
+      - 'MLProject/**'
   workflow_dispatch:
 
 jobs:
@@ -21,19 +21,18 @@ jobs:
 
       - name: Install MLflow & Dependencies
         run: |
-          pip install mlflow
-          pip install -r Membangun_model/requirements.txt || echo "Using conda.yaml later"
+          pip install mlflow scikit-learn pandas numpy
 
       - name: Run MLflow Project
         run: |
-          cd Workflow-CI/MLProject
+          cd MLProject
           mlflow run . --env-manager=local
 
       - name: Save Artifacts to GitHub (Advance Criteria)
         uses: actions/upload-artifact@v4
         with:
           name: mlruns-artifacts
-          path: Workflow-CI/MLProject/mlruns/
+          path: MLProject/mlruns/
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -43,7 +42,7 @@ jobs:
 
       - name: Build Docker Image with MLflow
         run: |
-          cd Workflow-CI/MLProject
+          cd MLProject
           mlflow models build-docker -m saved_model -n ${{ secrets.DOCKER_USERNAME }}/mental-health-model:latest --install-mlflow --env-manager=local
           
       - name: Push Docker Image to Docker Hub
